@@ -7,7 +7,7 @@ buildscript {
             android: [
                     compileSdk: 32,
                     targetSdk : 32,
-                    minSdk    : 28,
+                    minSdk    : 23,
                     gradle    : "7.0.0"
             ],
             kotlin : [
