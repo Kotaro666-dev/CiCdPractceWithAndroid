@@ -1,0 +1,33 @@
+name: Continuous delivery
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  # https://github.com/wzieba/Firebase-Distribution-Github-Action
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java_version: [ 11 ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install JDK ${{ matrix.java_version }}
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: ${{ matrix.java_version }}
+      - name: Build release
+        run: ./gradlew assembleRelease
+      - name: Upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{ secrets.FIREBASE_DEV_APP_ID }}
+          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+          groups: developer # Distribution groups
+          file: app/build/outputs/apk/release/app-release-unsigned.apk # apk file path
