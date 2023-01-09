@@ -33,11 +33,11 @@ jobs:
       - name: Install Android SDK
         uses: malinskiy/action-android/install-sdk@release/0.1.3
       - name: Set up platform tools like adb.
-      - run: sdkmanager platform-tools
+        run: sdkmanager platform-tools
       - name: Start ADB (and verify that pathing is working correctly).
-      - run: adb devices
+        run: adb devices
       - name: Verify $ANDROID_HOME is properly set for later Gradle commands.
-      - run: echo $ANDROID_HOME
+        run: echo $ANDROID_HOME
       - name: Build project
         run: ./gradlew assemble --stacktrace
       - name: Run unit tests
