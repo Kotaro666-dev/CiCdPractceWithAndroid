@@ -5,6 +5,8 @@ on:
     paths-ignore:
       - docs/**
       - README.md
+    branches-ignore:
+      - 'main' # mainへのpush時のワークフローは、continuous_delivery で定義しているため
   pull_request:
     paths-ignore:
       - docs/**
