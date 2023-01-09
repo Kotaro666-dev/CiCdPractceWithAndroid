@@ -9,11 +9,13 @@ on:
     paths-ignore:
       - docs/**
       - README.md
+    branches:
+      - 'main'
 
 # https://github.com/uber/AutoDispose/blob/main/.github/workflows/ci.yml
 jobs:
   build:
-    name: JDK ${{ matrix.java_version }}
+    name: Test
     runs-on: macOS-latest
     strategy:
       fail-fast: false
