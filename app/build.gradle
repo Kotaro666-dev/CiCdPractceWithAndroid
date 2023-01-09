@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -60,4 +61,7 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:${versions.jetpack.compose}"
     debugImplementation "androidx.compose.ui:ui-tooling:${versions.jetpack.compose}"
     debugImplementation "androidx.compose.ui:ui-test-manifest:${versions.jetpack.compose}"
+
+    // Firebase Android BoM を使用すると、アプリは常に互換性のある Firebase ライブラリ バージョンを使用します。
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
 }

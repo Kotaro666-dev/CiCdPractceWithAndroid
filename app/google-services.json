@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "29305692912",
+    "project_id": "cicdpracticewithandroid",
+    "storage_bucket": "cicdpracticewithandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29305692912:android:6a1dab98e8e61d94535835",
+        "android_client_info": {
+          "package_name": "com.example.cicdpractcewithandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29305692912-fr25vsi8qnsvtbfsntu1k74sfhcoga34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB_GU7NoJ_cV5u4VyiFQVNxCR3EzhoNhw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29305692912-fr25vsi8qnsvtbfsntu1k74sfhcoga34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
