@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.cicdpractcewithandroid.ui.theme.CiCdPractceWithAndroidTheme
 
@@ -34,10 +35,9 @@ fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
 
-@Preview(showBackground = true)
+@Preview(device = Devices.PIXEL_4_XL, name = "PIXEL_4_XL", showSystemUi = true)
+@Preview(device = Devices.NEXUS_5, name = "NEXUS_5", showSystemUi = true)
+@Preview(device = Devices.NEXUS_6, name = "NEXUS_6", showSystemUi = true)
 @Composable
-fun DefaultPreview() {
-    CiCdPractceWithAndroidTheme {
-        Greeting("Android")
-    }
-}
+fun PreviewGreeting() = Greeting(name = "Kotaro")
+

@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace 'com.example.cicdpractcewithandroid'
-    compileSdk 32
+    compileSdk versions.android.compileSdk
 
     defaultConfig {
         applicationId "com.example.cicdpractcewithandroid"
-        minSdk 28
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        minSdk versions.android.minSdk
+        targetSdk versions.android.targetSdk
+        versionCode versions.app.versionCode
+        versionName versions.app.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -48,16 +48,16 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-    implementation "androidx.compose.ui:ui:$compose_ui_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
-    implementation 'androidx.compose.material:material:1.1.1'
+    implementation "androidx.core:core-ktx:${versions.androidx.core}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.androidx.lifecycle}"
+    implementation "androidx.activity:activity-compose:${versions.androidx.activityCompose}"
+    implementation "androidx.compose.ui:ui:${versions.jetpack.compose}"
+    implementation "androidx.compose.ui:ui-tooling-preview:${versions.jetpack.compose}"
+    implementation "androidx.compose.material:material:${versions.androidx.material}"
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:${versions.jetpack.compose}"
+    debugImplementation "androidx.compose.ui:ui-tooling:${versions.jetpack.compose}"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:${versions.jetpack.compose}"
 }
