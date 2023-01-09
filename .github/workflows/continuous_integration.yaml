@@ -36,9 +36,9 @@ jobs:
       - name: Run instrumentation tests
         uses: malinskiy/action-android/emulator-run-cmd@release/0.1.3
         with:
-          cmd: ./gradlew connectedAndroidTest --stacktrace
-          api: 25
-          tag: default
-          abi: x86
+          cmd: ./gradlew connectedAndroidTest --stacktrace # the shell command to execute while the emulator is booted
+          api: 28 # the API version of emulator
+          tag: default # either the default or google_apis. Use google_apis for emulator with google store
+          abi: x86 #  the abi of the emulator. x86 is the fastest one
 
 
