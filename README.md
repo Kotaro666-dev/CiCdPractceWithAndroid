@@ -39,3 +39,20 @@ Android 開発には、テストに関して以下の 2 つのディレクトリ
     - 4m 39s
     
 ## 継続的デリバリ
+
+### 概要
+
+Firebase App Distribution に検証アプリを作成する仕組みを自動化しました。
+
+### 仕組み
+
+main ブランチへのプッシュイベントを契機に、`continuous_delivery.yaml` で定義したワークフローが実行されます。
+リリースビルドされた apk ファイルが最終的に、対象となる Firebase App Distribution にファイルアップロードされる仕組みとなります。
+
+### 使用ライブラリ
+
+- [wzieba/Firebase-Distribution-Github-Action](https://github.com/wzieba/Firebase-Distribution-Github-Action)
+
+### 参考資料
+
+- [【Android】Github Actions + Firebase App Distribution でアプリを配信する](https://zenn.dev/yass97/articles/e8d1e460ae6a59)
